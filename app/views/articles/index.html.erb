@@ -6,9 +6,12 @@
   <% @articles.each do |article| %>
     <%= render article %>
     <p>
-      <%= link_to "Show this article", article %>
+      <%= link_to "Show this article", article, class: "pdf-link" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New article", new_article_path %>
+<%= link_to "New article", new_article_path, class: "pdf-link" %>
+
+<%= link_to "Download articles", articles_path(format: :pdf), class: "pdf-link" %>
+

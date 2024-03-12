@@ -6,11 +6,30 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", media: "all" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="background-color: #CCC" class="container">
+    <!-- Separ HTML normal do PDF -->
+    <style>
+      @media print{
+        body{
+          background-color: #FFF;
+        }
+        .container{
+          width: auto;
+          margin: 0;
+          padding: 0;
+          border: none;
+        }
+        .pdf-link{
+          display: none;
+        }
+      }
+    </style>
+    <div style="border-style: dotted;">
+          <%= yield %>
+    </div>
   </body>
 </html>

@@ -65,3 +65,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "pdfkit", "~> 0.8.7"
+
+gem "wkhtmltopdf-binary", "~> 0.12.6"
